@@ -1,0 +1,16 @@
+@import './base/normalize.scss';
+@import './base/variables.scss';
+@import './base/mixins.scss';
+@import './base/fonts.scss';
+@import './base/font_icons.scss';
+@import './base/base.scss';
+@import './base/common.scss';
+@import './base/layout.scss';
+@import './base/buttons.scss';
+@import './layout/index.scss';
+@import './partials/nav.scss';
+
+.connectedContentTrigger {
+  text-decoration: underline;
+  cursor: pointer;
+}

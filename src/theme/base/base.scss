@@ -1,0 +1,468 @@
+html,
+html a {
+  font-size: 100%;
+  text-shadow: $px1 $px1 $px1 rgba(0, 0, 0, 0.004);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: $pro-color-white-f7;
+  font-family: $font-WSB;
+  //line-height: 1.45;
+  &.openNav {
+    overflow: hidden;
+  }
+}
+
+/* box-sizing */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* clearfix */
+.clearfix::before,
+.clearfix::after {
+  content: ' '; /* 1 */
+  display: table; /* 2 */
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* type */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+h1,
+.h1 {
+  font-size: $px36;
+
+  @include bp-tablet {
+    font-size: $tablet-px36;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px36;
+  }
+
+  @include print-css {
+    font-size: 36px;
+  }
+}
+
+h2,
+.h2 {
+  font-size: $px28;
+
+  @include bp-tablet {
+    font-size: $tablet-px28;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px28;
+  }
+
+  @include print-css {
+    font-size: 28px;
+  }
+}
+
+h3,
+.h3 {
+  font-size: $px20;
+
+  @include bp-tablet {
+    font-size: $tablet-px20;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px20;
+  }
+
+  @include print-css {
+    font-size: 20px;
+  }
+}
+
+h4,
+.h4 {
+  font-size: $px16;
+
+  @include bp-tablet {
+    font-size: $tablet-px16;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px16;
+  }
+
+  @include print-css {
+    font-size: 16px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: $px14;
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+  }
+
+  @include print-css {
+    font-size: 14px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: $px10;
+
+  @include bp-tablet {
+    font-size: $tablet-px10;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px10;
+  }
+
+  @include print-css {
+    font-size: 10px;
+  }
+}
+
+.headline {
+  font-family: $font-PHBold;
+  line-height: 1.2;
+}
+
+.highlight {
+  font-family: $font-WSB;
+  letter-spacing: $px1p2;
+  text-transform: uppercase;
+
+  @include bp-tablet {
+    letter-spacing: $tablet-px1p2;
+  }
+
+  @include bp-phone {
+    letter-spacing: $phone-px1p2;
+  }
+}
+
+.fs60 {
+  font-size: $px60;
+
+  @include bp-tablet {
+    font-size: $tablet-px60;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px60;
+  }
+
+  @include print-css {
+    font-size: 60px;
+  }
+}//fs60
+
+.fs50 {
+  font-size: $px50;
+
+  @include bp-tablet {
+    font-size: $tablet-px50;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px50;
+  }
+}//fs50
+.fs48 {
+  font-size: $px48;
+
+  @include bp-tablet {
+    font-size: $tablet-px48;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px48;
+  }
+
+  @include print-css {
+    font-size: 48px;
+  }
+}//fs48
+.fs36 {
+  font-size: $px36;
+
+  @include bp-tablet {
+    font-size: $tablet-px36;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px36;
+  }
+
+  @include print-css {
+    font-size: 36px;
+  }
+}//fs36
+.fs32 {
+  font-size: $px32;
+
+  @include bp-tablet {
+    font-size: $tablet-px32;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px32;
+  }
+
+  @include print-css {
+    font-size: 32px;
+  }
+}//fs32
+.fs28 {
+  font-size: $px28;
+
+  @include bp-tablet {
+    font-size: $tablet-px28;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px28;
+  }
+
+  @include print-css {
+    font-size: 28px;
+  }
+}//fs28
+.fs24 {
+  font-size: $px24;
+
+  @include bp-tablet {
+    font-size: $tablet-px24;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px24;
+  }
+}//fs24
+.fs20 {
+  font-size: $px20;
+
+  @include bp-tablet {
+    font-size: $tablet-px20;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px20;
+  }
+
+  @include print-css {
+    font-size: 20px;
+  }
+}//fs20
+.fs18 {
+  font-size: $px18;
+
+  @include bp-tablet {
+    font-size: $tablet-px18;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px18;
+  }
+
+  @include print-css {
+    font-size: 18px;
+  }
+}//fs18
+.fs16 {
+  font-size: $px16;
+
+  @include bp-tablet {
+    font-size: $tablet-px16;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px16;
+  }
+
+  @include print-css {
+    font-size: 16px;
+  }
+}//fs16
+.fs14 {
+  font-size: $px14;
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+  }
+
+  @include print-css {
+    font-size: 14px;
+  }
+}//fs14
+.fs13 {
+  font-size: $px13;
+
+  @include bp-tablet {
+    font-size: $tablet-px13;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px13;
+  }
+
+  @include print-css {
+    font-size: 13px;
+  }
+}//fs13
+.fs12 {
+  font-size: $px12;
+
+  @include bp-tablet {
+    font-size: $tablet-px12;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px12;
+  }
+
+  @include print-css {
+    font-size: 12px;
+  }
+}//fs12
+a {
+  color: $pro-color-gray-444;
+  text-decoration: none;
+
+  &:hover {
+    //color: red;
+    text-decoration: underline;
+  }
+}
+
+p,
+.paragraph,
+.paragraph_dark {
+  font-family: $font-PTR;
+  margin: 0 0 $px15;
+  line-height: 1.5;
+
+  @include bp-tablet {
+    margin: 0 0 $tablet-px15;
+
+    @include bp-phone {
+      margin: 0 0 $phone-px15;
+    }
+  }//bp1
+}//p
+
+p,
+.paragraph {
+  color: $pro-color-gray-444;
+}
+
+.paragraph_dark {
+  color: $pro-color-white;
+
+  a,
+  li {
+    color: $pro-color-white;
+
+    @include print-css {
+      color: $pro-color-black;
+    }
+  }
+
+  @include print-css {
+    color: $pro-color-black;
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* images and SVG */
+svg {
+  width: 100%;
+  height: auto;
+  // float: left;
+}
+
+img {
+  width: 100%;
+}
+
+//helpers
+.posRel {
+  position: relative;
+}
+
+.separator {
+  display: block;
+}
+
+section {
+  float: left;
+  width: 100%;
+}
+
+figure {
+  margin: 0;
+
+  &.pullRight {
+    width: 58.175675676vw;
+  }
+
+  &.pullLeft {
+    width: 58.175675676vw;
+
+    img {
+      margin-left: -10.878378379vw;
+    }
+  }
+
+  .captionBorder {
+    display: block;
+    width: 47.297297297vw;
+    background-color: $pro-color-gray-ccc;
+    height: $px4;
+  }
+
+  figcaption {
+    font-family: $font-WB;
+    font-size: $px16;
+    color: $pro-color-gray-999;
+    //line-height: $px32;
+    padding: $px9 0 $px4 0;
+  }
+}

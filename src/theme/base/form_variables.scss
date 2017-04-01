@@ -1,0 +1,33 @@
+%input-text-default {
+  display: block;
+  font-size: $px24;
+  line-height: 1.5;
+  width: 100%;
+  border: none;
+  border-bottom: $px1 solid rgba($pro-color-black, 0.12);
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  position: relative;
+  outline: none;
+}
+
+%input-text-focus {
+  border-bottom: $px2 solid $pro-color-turquoise-1B;
+  margin-bottom: -$px1;
+}
+
+%small-text-form {
+  font-family: $font-WB;
+  color: $pro-color-gray-999;
+  font-size: $px14;
+  line-height: 1.5;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+%label {
+  font-family: $font-WB;
+  font-size: $px16;
+  line-height: 1.5;
+  color: $pro-color-gray-999;
+}

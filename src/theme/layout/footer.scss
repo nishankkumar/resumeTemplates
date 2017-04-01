@@ -1,0 +1,442 @@
+.globalFooterWrap {
+  color: $pro-color-white;
+
+  @include print-css {
+    display: none;
+  }
+}
+
+.footerTopSection {
+  background: $pro-color-black-26;
+  padding: $px30 0;
+
+  @include bp-tablet {
+    padding: $tablet-px30 0;
+  }
+
+  @include bp-phone {
+    padding: $phone-px30 0;
+  }
+}
+
+.footerBottomSection {
+  background: $pro-color-black-21;
+  padding: $px30 0;
+
+  @include bp-tablet {
+    padding: $tablet-px30 0;
+  }
+
+  @include bp-phone {
+    padding: $phone-px30 0;
+  }
+}
+
+.footerLeftWidget {
+  display: inline-block;
+  max-width: $px350;
+  margin-top: $px50;
+
+  @include bp-tablet {
+    max-width: $tablet-px300;
+    margin-top: $tablet-px50;
+  }
+
+  @include bp-phone {
+    max-width: 100%;
+    text-align: center;
+    margin: $phone-px30 0;
+  }
+}
+
+.WVLogoWrap {
+  > a {
+    display: inline-block;
+  }
+
+  @include bp-phone {
+    max-width: 80%;
+    display: inline-block;
+    margin-bottom: $phone-px10;
+  }
+}
+
+.footerNavWrap {
+  width: calc(100% - #{$px480});
+  float: right;
+
+  @include bp-tablet {
+    width: calc(100% - #{$tablet-px400});
+  }
+
+  @include bp-phone {
+    float: none;
+    width: 100%;
+  }
+}
+
+.footerNavListWrap {
+  width: 32%;
+  min-height: $px260;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: $px8;
+  padding: $px10 $px20 0;
+  border-left: $px2 solid $pro-color-white-transp01;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include bp-tablet {
+    width: 30%;
+    margin-right: $tablet-px20;
+    padding: $tablet-px10 0 0 $tablet-px20;
+    border-left: $tablet-px2 solid $pro-color-white-transp01;
+  }
+
+  @include bp-phone {
+    width: 100%;
+    min-height: auto;
+    margin-right: 0;
+    padding: $phone-px10 0 0;
+    border-left: 0;
+    margin-bottom: $phone-px20;
+  }
+
+  > ul {
+    margin-top: $px20;
+    padding-bottom: $px10;
+
+    @include bp-tablet {
+      margin-top: $tablet-px20;
+      padding-bottom: $tablet-px10;
+    }
+
+    @include bp-phone {
+      margin-top: $phone-px20;
+      padding-bottom: $phone-px10;
+    }
+  }
+}
+
+.footerNavLink {
+  margin-bottom: $px10;
+
+  > a {
+    font-family: $font-WB;
+    font-size: $px16;
+    color: $pro-color-gray-999;
+    letter-spacing: $px1;
+
+    &:hover {
+      color: $pro-color-white;
+      text-decoration: none;
+    }
+
+    @include bp-tablet {
+      font-size: $tablet-px16;
+      letter-spacing: $tablet-px1;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px16;
+      letter-spacing: $phone-px1;
+    }
+  }
+
+  @include bp-tablet {
+    margin-bottom: $tablet-px10;
+  }
+
+  @include bp-phone {
+    margin-bottom: $phone-px10;
+  }
+}
+
+.footerNavTitle {
+  font-family: $font-WSB;
+  text-transform: uppercase;
+  font-size: $px14;
+  color: $pro-color-gray-666;
+  margin-bottom: $px20;
+  letter-spacing: $px3;
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+    margin-bottom: $tablet-px20;
+    letter-spacing: $tablet-px1;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+    margin-bottom: $phone-px20;
+    letter-spacing: $phone-px3;
+  }
+}
+
+.twoColumnsWrap {
+  width: 50%;
+  display: inline-block;
+  vertical-align: bottom;
+
+  @include bp-phone {
+    width: 100%;
+    margin-bottom: $phone-px20;
+  }
+}
+
+.newsLetterFormWrap {
+  padding: $px30 $px20;
+  background-color: $pro-color-white-transp03;
+
+  .btnStyle {
+    margin: 0;
+    width: $px140;
+    min-width: auto;
+    color: $pro-color-white;
+    font-size: $px16;
+
+    @include bp-tablet {
+      font-size: $tablet-px16;
+      width: $tablet-px140;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px16;
+      width: $phone-px140;
+    }
+  }
+
+  @include bp-tablet {
+    padding: $tablet-px30 $tablet-px20;
+  }
+
+  @include bp-phone {
+    text-align: center;
+    padding: $phone-px30 $phone-px20;
+  }
+}
+
+.emailInputField {
+  width: calc(100% - #{$px200});
+  background: transparent;
+  border: 0;
+  border-bottom: $px1 solid $pro-color-white-transp03;
+  margin-right: $px50;
+  padding: $px10;
+  font-family: $font-WB;
+  font-size: $px16;
+  color: $pro-color-white;
+
+  &:focus {
+    outline: 0;
+    border-bottom: $px1 solid $pro-color-turquoise-1B;
+  }
+
+  @include bp-tablet {
+    width: calc(100% - #{$tablet-px170});
+    margin-right: $tablet-px20;
+    padding: $tablet-px10;
+    font-size: $tablet-px16;
+  }
+
+  @include bp-phone {
+    width: 100%;
+    margin-right: 0;
+    padding: $phone-px10;
+    font-size: $phone-px14;
+    margin-bottom: $phone-px10;
+  }
+}
+
+.footerSubmitBtn {
+  min-width: $px80;
+
+  @include bp-tablet {
+    min-width: $tablet-px80;
+  }
+
+  @include bp-phone {
+    min-width: $phone-px80;
+  }
+}
+
+.footerLinkWrap {
+  display: inline-block;
+}
+
+.footerLink {
+  display: inline-block;
+  font-family: $font-WB;
+  font-size: $px14;
+  color: $pro-color-gray-444;
+  padding: 0 $px8;
+  border-right: $px1 solid $pro-color-gray-444;
+
+  > a {
+    font-family: $font-WB;
+    font-size: $px14;
+    color: $pro-color-gray-444;
+
+    &:hover {
+      color: $pro-color-white;
+      text-decoration: none;
+    }
+
+    @include bp-tablet {
+      font-size: $tablet-px14;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px14;
+      line-height: 2;
+    }
+  }
+
+  &:last-child {
+    border-right: 0;
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+    padding: 0 $tablet-px8;
+    border-right: $tablet-px1 solid $pro-color-gray-444;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+    padding: 0 $phone-px8;
+    border-right: $phone-px1 solid $pro-color-gray-444;
+  }
+}
+
+.trendingTopics {
+  .footerNavLink {
+    > a {
+      color: $pro-color-turquoise-1B;
+    }
+  }
+}
+
+.socialLinksWrap {
+  margin-top: $px140;
+
+  @include bp-tablet {
+    margin-top: $tablet-px140;
+  }
+
+  @include bp-phone {
+    margin-top: $phone-px20;
+  }
+}
+
+.socialLink {
+  display: inline-block;
+  margin: 0 $px8;
+
+  > a {
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    font-size: $px14;
+    background: $pro-color-gray-666;
+    height: $px24;
+    width: $px24;
+    padding: $px4 0;
+    color: $pro-color-white;
+    text-decoration: none;
+
+    @include bp-tablet {
+      font-size: $tablet-px14;
+      height: $tablet-px24;
+      width: $tablet-px24;
+      padding: $tablet-px5 0;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px14;
+      height: $phone-px24;
+      width: $phone-px24;
+      padding: $phone-px5 0;
+    }
+  }
+
+  @include bp-tablet {
+    margin: 0 $tablet-px8;
+  }
+
+  @include bp-phone {
+    margin: 0 $phone-px8;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  .linkedinLink {
+    &:hover {
+      background: $pro-color-linkedin;
+    }
+  }
+
+  .twitterLink {
+    &:hover {
+      background: $pro-color-twitter;
+    }
+  }
+
+  .fbLink {
+    &:hover {
+      background: $pro-color-fb;
+    }
+  }
+
+  .googleplusLink {
+    &:hover {
+      background: $pro-color-googleplus;
+    }
+  }
+
+  .youtubeLink {
+    &:hover {
+      background: $pro-color-youtube;
+    }
+  }
+
+  .podcastLink {
+    &:hover {
+      background: linear-gradient(to bottom, $pro-color-podcast-top 0%, $pro-color-podcast-bottom 100%);
+    }
+  }
+}
+
+.marcomfooter {
+  .footerLeftWidget {
+    margin-top: $px20;
+  }
+
+  .WVLogoWrap {
+    width: 80%;
+  }
+
+  .footerNavListWrap {
+    min-height: $px200;
+
+    @include bp-tablet {
+      min-height: $tablet-px200;
+    }
+
+    @include bp-phone {
+      min-height: auto;
+    }
+  }
+
+  .socialLinksWrap {
+    margin-top: $px70;
+
+    @include bp-tablet {
+      margin-top: $tablet-px80;
+    }
+  }
+}

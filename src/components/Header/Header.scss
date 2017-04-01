@@ -1,0 +1,315 @@
+@import 'base/components_base';
+
+.mobileOnly {
+  display: none;
+
+  @include bp-phone {
+    display: block;
+  }
+}
+
+.menuHighlightLinks {
+  color: $stratfor-color-white;
+  display: block;
+  width: 100%;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.scrollMenu {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.navMenuWorldview {
+  background: $stratfor-color-white;
+
+  span {
+    background: $stratfor-color-white;
+  }
+
+  .menuHighlightLinks {
+    background: $stratfor-color-white;
+    color: $stratfor-color-gray-444;
+  }
+}
+
+.navMenuButtons {
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-family: $font-WSB;
+  font-size: $px14;
+  letter-spacing: $px4;
+  line-height: $px50;
+  padding: 0 $px20;
+  background-color: $stratfor-color-gray-2c;
+  color: $stratfor-color-gray-999;
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  border-bottom: $px1 solid $stratfor-color-gray-444;
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+    line-height: $tablet-px50;
+    padding: 0 $tablet-px20;
+    border-bottom: $tablet-px1 solid $stratfor-color-gray-444;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+    line-height: $phone-px40;
+    padding: 0 $phone-px20;
+    font-family: $font-WB;
+    border-bottom: $phone-px1 solid $stratfor-color-gray-444;
+  }
+
+  &.mobileOnly {
+    display: none;
+
+    @include bp-phone {
+      display: block;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $px20;
+    right: $px20;
+    width: 0;
+    height: 0;
+    border-bottom: $px5 solid transparent;
+    border-top: $px5 solid transparent;
+    border-left: $px6 solid $stratfor-color-gray-666;
+    transition: all 0.35s ease;
+    -webkit-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -ms-transition: all 0.35s ease;
+
+    @include bp-tablet {
+      top: $tablet-px20;
+      right: $tablet-px20;
+      border-bottom: $tablet-px5 solid transparent;
+      border-top: $tablet-px5 solid transparent;
+      border-left: $tablet-px6 solid $stratfor-color-gray-666;
+    }
+
+    @include bp-phone {
+      top: $phone-px15;
+      right: $phone-px20;
+      border-bottom: $phone-px5 solid transparent;
+      border-top: $phone-px5 solid transparent;
+      border-left: $phone-px6 solid $stratfor-color-gray-666;
+    }
+  }
+
+  &.open::after {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+  }
+
+  &.navMenuWorldview {
+    background: $stratfor-color-white;
+    color: $stratfor-color-gray-444;
+    border-bottom: $px1 solid $stratfor-color-gray-ec;
+
+    @include bp-tablet {
+      border-bottom: $tablet-px1 solid $stratfor-color-gray-ec;
+    }
+
+    @include bp-phone {
+      border-bottom: $phone-px1 solid $stratfor-color-gray-ec;
+    }
+  }
+}
+
+.navMenuSubSection {
+  font-family: $font-WB;
+  border-bottom: none;
+
+  ul {
+    border-bottom: none;
+  }
+
+  li {
+    border-bottom: $px1 solid $stratfor-color-gray-444;
+
+    @include bp-tablet {
+      border-bottom: $tablet-px1 solid $stratfor-color-gray-444;
+    }
+
+    @include bp-phone {
+      border-bottom: $phone-px1 solid $stratfor-color-gray-444;
+    }
+
+    a {
+      color: $stratfor-color-gray-999;
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &.navMenuWorldview {
+    background: $stratfor-color-white-f7;
+    color: $stratfor-color-gray-444;
+
+    li {
+      border-bottom: $px1 solid $stratfor-color-gray-ec;
+
+      @include bp-tablet {
+        border-bottom: $tablet-px1 solid $stratfor-color-gray-ec;
+      }
+
+      @include bp-phone {
+        border-bottom: $phone-px1 solid $stratfor-color-gray-ec;
+      }
+
+      a {
+        color: $stratfor-color-gray-444;
+      }
+    }
+  }
+
+  &.mobileOnly {
+    display: none;
+
+    @include bp-phone {
+      display: block;
+    }
+  }
+
+  &.open {
+    display: block;
+
+    &.mobileOnly {
+      display: none;
+
+      @include bp-phone {
+        display: block;
+      }
+    }
+  }
+
+  &.closed {
+    display: none;
+  }
+}
+
+.menuItems {
+  position: relative;
+  padding-bottom: $px300;
+  height: auto;
+  background: $stratfor-color-gray-26;
+  min-height: calc(100% - 5em);
+
+  @include bp-tablet {
+    padding-bottom: $tablet-px300;
+    min-height: calc(100% - 5em);
+  }
+
+  @include bp-phone {
+    padding-bottom: $phone-px300;
+    min-height: calc(100% - 5em);
+  }
+}
+
+.productsMenuItems {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: $px4;
+    height: 100%;
+
+    @include bp-tablet {
+      width: $tablet-px4;
+    }
+
+    @include bp-phone {
+      width: $phone-px4;
+    }
+  }
+
+  &.productWorldview {
+    &::before {
+      background-color: $stratfor-color-turquoise-25;
+    }
+  }
+
+  &.productThreatLens {
+    &::before {
+      background-color: $stratfor-color-scarlet;
+    }
+  }
+
+  &.productAdvisory {
+    &::before {
+      background-color: $stratfor-color-purple-8B;
+    }
+  }
+}
+
+.callStratfor {
+  float: left;
+  display: none;
+  color: $stratfor-color-gray-97;
+  font-size: $px13;
+  font-family: $font-WSB;
+
+  @include bp-tablet {
+    font-size: $tablet-px13;
+    margin-left: $tablet-px30;
+    line-height: $tablet-px50;
+  }
+
+  @include bp-phone {
+    display: none;
+  }
+}
+
+.forumButton {
+  border: none;
+  background: none;
+  color: $stratfor-color-gray-ccc;
+  margin: 0;
+  font-size: $px14;
+  line-height: $px40;
+  padding: 0;
+  font-family: 'Whitney-Book';
+  text-transform: uppercase;
+  letter-spacing: $px1p5;
+
+  @include bp-tablet {
+    font-size: $tablet-px14;
+    line-height: $tablet-px40;
+    letter-spacing: $tablet-px1p5;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+    line-height: $phone-px40;
+    letter-spacing: $phone-px1p5;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $stratfor-color-gray-ccc;
+    text-decoration: none;
+  }
+}

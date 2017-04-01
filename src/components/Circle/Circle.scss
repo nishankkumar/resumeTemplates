@@ -1,0 +1,65 @@
+@import 'base/components_base';
+
+.circle {
+  margin: 0 auto;
+  padding-top: $px2;
+  margin-bottom: $px5;
+  background-color: $pro-color-turquoise-25;
+  width: $px250;
+  height: $px260;
+  clip-path: circle($px80);
+
+  @include bp-phone {
+    width: $px800;
+    height: $px1000;
+    clip-path: circle($px400);
+  }
+
+  .centerBody {
+    width: 50%;
+    height: 20%;
+    text-align: center;
+    color: $pro-color-white;
+    font-size: $px30;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .text {
+      margin-bottom: $px20;
+
+      &::after {
+        content: '';
+        width: $px40;
+        height: $px5;
+        color: $pro-color-white;
+        background-color: $pro-color-turquoise-4F;
+        left: $px65;
+        bottom: $px35;
+        position: absolute;
+
+        @include bp-phone {
+          width: $px140;
+          height: $px10;
+          left: $px260;
+          bottom: $px155;
+        }
+      }
+    } // text
+
+    @include bp-phone {
+      font-size: $px130;
+    }
+  } // centerBody
+
+  .subText {
+    font-size: $px15;
+
+    @include bp-phone {
+      font-size: $px80;
+    }
+  } // subText
+} // circle

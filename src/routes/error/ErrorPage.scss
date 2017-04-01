@@ -1,0 +1,111 @@
+@import 'base/components_base';
+
+.container {
+  padding-bottom: 0;
+}
+
+.errorPageWrap {
+  background: $pro-color-gray-ccc;
+  padding: $px50;
+  text-align: center;
+  color: $pro-color-white;
+
+  &.error404Wrap {
+    background: url('/images/error_404_bg.jpg') center top no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  &.error500Wrap {
+    background: url('/images/error_500_bg.jpg') center top no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  @include bp-tablet {
+    padding: $tablet-px50;
+  }
+
+  @include bp-phone {
+    min-height: auto;
+    padding: $phone-px30;
+    background-size: $phone-px712;
+  }
+}
+
+.errorPageTitle {
+  font-family: $font-PHBoldItalic;
+  font-size: $px36;
+  margin: $px80 0;
+  color: $pro-color-white;
+
+  @include bp-tablet {
+    font-size: $tablet-px36;
+    margin: $tablet-px80 0;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px18;
+    margin: $phone-px20 0;
+  }
+}
+
+.errorBottomSection {
+  margin: $px300 0 $px100;
+
+  > a {
+    min-width: $px280;
+
+    @include bp-phone {
+      min-width: auto;
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+
+  @include bp-tablet {
+    margin-top: $tablet-px400;
+  }
+}
+
+.errorMsgWrap {
+  font-family: $font-WB;
+  font-size: $px30;
+  letter-spacing: $px1;
+  color: $pro-color-white;
+  margin: $px20 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    margin: $px40 auto $px20;
+    width: $px60;
+    height: $px4;
+    background-color: $pro-color-white;
+
+    @include bp-tablet {
+      margin: $tablet-px40 auto $tablet-px20;
+      width: $tablet-px60;
+      height: $tablet-px4;
+    }
+
+    @include bp-phone {
+      margin: $phone-px40 auto $phone-px20;
+      width: $phone-px60;
+      height: $phone-px4;
+    }
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px30;
+    letter-spacing: $tablet-px1;
+    margin: $tablet-px20 0;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px25;
+    letter-spacing: $phone-px1;
+    margin: $phone-px20 0;
+  }
+}

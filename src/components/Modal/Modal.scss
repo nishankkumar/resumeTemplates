@@ -1,0 +1,168 @@
+@import 'base/components_base';
+
+// Overlay styles.
+.overlay {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba($pro-color-black-21, 0.7);
+  width: 100%;
+  z-index: 10000;
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.root {
+  display: inline-block;
+  outline: none;
+  width: $px540;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: $px225;
+
+  @include bp-phone {
+    width: 90%;
+  }
+}
+
+.close {
+  position: absolute;
+  top: -$px50;
+  right: -$px50;
+  background: transparent;
+  border: none;
+  overflow: hidden;
+  text-indent: -10000px;
+  width: $px30;
+  height: $px30;
+  outline: none;
+
+  &::after,
+  &::before {
+    content: '';
+    position: absolute;
+    width: $px4;
+    height: $px35;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: rgba($pro-color-white, 0.5);
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  @include bp-phone {
+    top: -$phone-px30;
+    right: -$phone-px5;
+    width: $phone-px30;
+    height: $phone-px30;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      width: $phone-px4;
+      height: $phone-px30;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background: rgba($pro-color-white, 0.5);
+    }
+  }
+}
+
+.body {
+  border-radius: 0 0 2px 2px;
+  background-color: $pro-color-white;
+
+  @include bp-tablet {
+    height: auto;
+  }
+
+  @include bp-phone {
+    height: auto;
+  }
+}
+
+.header {
+  font-size: $px28;
+  line-height: 1.21;
+  font-family: $font-PHBold;
+  background-color: $pro-color-gray-31;
+  color: $pro-color-white;
+  text-align: center;
+  margin: 0;
+  padding: $px28;
+
+  > span {
+    font-family: $font-PHBoldItalic;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px20;
+    padding: $phone-px20;
+  }
+}
+
+.wrap {
+  padding: $px50;
+  position: relative;
+
+  @include bp-phone {
+    padding: $phone-px30 $phone-px10;
+  }
+}
+
+.footer {
+  padding-top: $px25;
+  font-size: $px18;
+  line-height: $px15;
+  color: $pro-color-white;
+  text-align: center;
+
+  > i {
+    font-family: $font-WRItalic;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: $px5;
+    color: $pro-color-white;
+    text-decoration: underline;
+  }
+
+  > span {
+    font-family: $font-WB;
+  }
+
+  @include bp-tablet {
+    padding-top: $tablet-px20;
+    font-size: $tablet-px16;
+    line-height: $tablet-px24;
+  }
+
+  @include bp-phone {
+    padding-top: $phone-px20;
+    font-size: $phone-px16;
+    line-height: $phone-px20;
+  }
+}
+
+:global {
+  .ReactModal__Body--open {
+    overflow: hidden;
+  }
+}

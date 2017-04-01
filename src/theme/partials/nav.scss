@@ -1,0 +1,787 @@
+.reactiveNav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 1001;
+  border-right: $px1 solid rgba($pro-color-white, 0.3);
+  transform: translate3d(0%, 0, 0);
+  -webkit-transform: translate3d(0%, 0, 0);
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: all 0.45s ease, transform 0.6s ease;
+  -webkit-transition: all 0.45s ease, transform 0.6s ease;
+
+  @include print-css {
+    display: none;
+  }
+}
+
+.superGlobalNav {
+  height: $px50;
+  line-height: $px50;
+  width: 100%;
+  background-color: $pro-color-gray-444;
+  position: relative;
+
+  .theGlobalNav {
+    position: fixed;
+    width: 100%;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+  }
+
+  .superGlobalNavTrigger {
+    font-size: $px14;
+    color: $pro-color-gray-999;
+    letter-spacing: $px1;
+    // border-left: $pro-color-gray-2c $px3 solid;
+    padding-left: $px18;
+    width: auto;
+    float: left;
+
+    @include bp-tablet {
+      display: none;
+    }
+  }
+
+  .user {
+    float: right;
+    width: auto;
+    font-family: $font-WSB;
+    font-size: $px12;
+    color: $pro-color-gray-97;
+    letter-spacing: $px1;
+    line-height: $px42;
+
+    span {
+      display: block;
+      float: left;
+    }
+
+    img {
+      float: left;
+      width: $px32;
+      height: $px32;
+      margin: $px4 0 0 $px10;
+    }
+  }
+
+  @include bp-tablet {
+    height: $tablet-px50;
+  }
+
+  @include bp-phone {
+    display: none;
+  }
+}
+
+.reactiveNav--hidden {
+  transform: translate3d(0, -100%, 0) !important;
+  -webkit-transform: translate3d(0, -100%, 0) !important;
+  // transition: transform 1.5s ease;
+}
+
+.pageNav--show {
+  transform: translate3d(0, 0%, 0) !important;
+  -webkit-transform: translate3d(0, 0%, 0) !important;
+  z-index: 100;
+  visibility: visible;
+  // transition: transform 1.5s ease;
+}
+
+/* Overlay Menu styling */
+.navContainer {
+  margin: 0 6.75%;
+}
+
+.productsListWrap {
+  width: $px215;
+  display: inline-block;
+  vertical-align: top;
+  color: $pro-color-white;
+  margin-top: $px10;
+  margin-right: $px90;
+}
+
+.navHeaderText {
+  font-family: $font-WSB;
+  font-size: $px14;
+  color: $pro-color-white;
+  padding: $px10 $px15;
+  letter-spacing: $px2;
+  margin-bottom: $px10;
+
+  @include bp-tablet {
+    font-size: $tablet-px10;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px3;
+  }
+}
+
+.productLink {
+  font-family: $font-WM;
+  font-size: $px16;
+
+  > a {
+    color: $pro-color-gray-A9;
+    padding: $px5 $px15;
+    display: block;
+    position: relative;
+
+    &:hover {
+      color: $pro-color-white;
+      background: $pro-color-black-0B;
+      text-decoration: none;
+    }
+  }
+
+  &.active {
+    > a {
+      font-family: $font-WB;
+      color: $pro-color-white;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 100%;
+        height: 100%;
+        background: $pro-color-turquoise-4F;
+        width: $px4;
+      }
+    }
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px12;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px4;
+  }
+}
+
+.aboutUsText {
+  width: $px460;
+  position: relative;
+  display: inline-block;
+  margin: $px10 0 $px15;
+  padding: 0 $px20;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 10%;
+    height: 85%;
+    width: $px1;
+    background: $pro-color-gray-444;
+  }
+
+  .navHeaderText {
+    padding: $px10 0;
+  }
+
+  @include bp-tablet {
+    width: $tablet-px460;
+  }
+
+  @include bp-phone {
+    width: $phone-px140;
+  }
+}
+
+.descText {
+  font-family: $font-WB;
+  font-size: $px16;
+  color: $pro-color-gray-A9;
+  margin: 0;
+
+  @include bp-tablet {
+    font-size: $tablet-px12;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px4;
+  }
+}
+
+.contactLink {
+  font-family: $font-WM;
+  font-size: $px13;
+  color: $pro-color-gray-D6;
+  display: inline-block;
+  margin: $px10 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px10;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px4;
+  }
+}
+
+.closeTopNav {
+  font-size: $px36;
+  color: $pro-color-white;
+  position: absolute;
+  right: $px40;
+  top: $px10;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px36;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px10;
+  }
+}
+
+.overlayBackDrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background: $pro-color-black;
+  display: none;
+  z-index: 99;
+}
+
+.openNavBar {
+  .globalNav {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+  }
+
+  .overlayBackDrop {
+    display: block;
+  }
+}
+
+.clickOverlay {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hideHeader {
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+}
+
+.globalNav {
+  transition: transform 0.6s ease;
+  -webkit-transition: transform 0.6s ease;
+  position: fixed;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: $px320;
+  height: 100vh;
+  font-family: $font-WB;
+  font-size: $px16;
+  color: $pro-color-gray-999;
+  letter-spacing: 0;
+  line-height: $px24;
+  background: $pro-color-gray-26;
+
+  .navContainer {
+    border-left: $pro-color-gray-444 $px4 solid;
+  }
+
+  @include bp-tablet {
+    width: $tablet-px320;
+    font-size: $tablet-px16;
+    line-height: $tablet-px24;
+  }
+
+  @include bp-phone {
+    width: 100%;
+    font-size: $phone-px16;
+    line-height: $phone-px24;
+    overflow-y: scroll;
+  }
+
+  .controls {
+    height: $px50;
+    line-height: $px54;
+    background-color: $pro-color-gray-2c;
+    position: relative;
+    padding-left: $px20;
+    border-bottom: $px1 solid $pro-color-black-111;
+    font-size: $px13;
+    display: block !important;
+
+    @include bp-tablet {
+      height: $tablet-px50;
+      line-height: $tablet-px54;
+      padding-left: $tablet-px20;
+      font-size: $tablet-px13;
+    }
+
+    @include bp-phone {
+      display: none !important;
+    }
+  }//controls
+
+  .ourCommitment {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: $px30;
+
+    @include bp-tablet {
+      padding-bottom: $tablet-px30;
+    }
+
+    @include bp-phone {
+      padding-bottom: $phone-px30;
+    }
+
+    span {
+      color: $pro-color-gray-999;
+      background-color: transparent;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+
+    a {
+      padding-left: 0;
+      color: $pro-color-white;
+      font-family: $font-WM;
+      font-size: $px14;
+
+      @include bp-tablet {
+        font-size: $tablet-px14;
+      }
+
+      @include bp-phone {
+        font-size: $phone-px14;
+      }
+    }
+  }
+
+  &.globalOpen {
+    transform: translate3d(0%, 0, 0);
+    -webkit-transform: translate3d(0%, 0, 0);
+  }
+
+  ul {
+    padding-bottom: 0;
+
+    .highlight {
+      border-bottom: $px1 solid $pro-color-gray-444;
+
+      @include bp-tablet {
+        border-bottom: $tablet-px1 solid $pro-color-gray-444;
+      }
+
+      @include bp-phone {
+        border-bottom: $phone-px1 solid $pro-color-gray-444;
+      }
+    }
+
+    li {
+      color: $pro-color-gray-999;
+      padding: $px5 $px20 $px5 $px35;
+
+      @include bp-tablet {
+        padding: $tablet-px5 $tablet-px20 $tablet-px5 $tablet-px35;
+      }
+
+      @include bp-phone {
+        padding: $phone-px3 0 $phone-px3 $phone-px20;
+      }
+
+      a {
+        font-family: $font-WB;
+        font-size: $px16;
+        line-height: $px30;
+        text-decoration: none;
+
+        @include bp-tablet {
+          font-size: $tablet-px16;
+          line-height: $tablet-px30;
+        }
+
+        @include bp-phone {
+          font-size: $phone-px14;
+          line-height: $phone-px30;
+          padding-left: $phone-px20;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+    }//li
+
+    @include bp-phone {
+      float: none;
+      width: 100%;
+    }
+  }//ul
+
+  span {
+    font-family: $font-WSB;
+    font-size: $px14;
+    letter-spacing: $px4;
+    line-height: $px50;
+    color: $pro-color-white;
+    padding: 0 $px20;
+    background-color: $pro-color-gray-2c;
+    display: block;
+    position: relative;
+
+    @include bp-tablet {
+      font-size: $tablet-px14;
+      line-height: $tablet-px50;
+      padding: 0 $tablet-px20;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px14;
+      line-height: $phone-px40;
+      padding: 0 $phone-px20;
+      color: $pro-color-gray-999;
+      font-family: $font-WB;
+      border-bottom: $phone-px1 solid $pro-color-gray-444;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: $px4;
+      height: 100%;
+      background-color: $pro-color-gray-444;
+
+      @include bp-tablet {
+        width: $tablet-px4;
+      }
+
+      @include bp-phone {
+        display: none;
+      }
+    }
+  }//span
+
+  p {
+    font-family: $font-WB;
+    color: $pro-color-gray-999;
+    padding: 0 $px20;
+
+    @include bp-tablet {
+      padding: 0 $tablet-px20;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px16;
+      padding: 0 $phone-px20;
+    }
+  }
+}//theGlobalNav
+
+.mobileOnly {
+  display: none;
+
+  @include bp-tablet {
+    display: none;
+  }
+
+  @include bp-phone {
+    display: block;
+  }
+}
+
+// Mobile Menu close button styling
+.navCloseBtn {
+  font-family: $font-WB;
+  font-size: $px32;
+  color: $pro-color-white;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: $px10;
+  top: $px14;
+  z-index: 1;
+  opacity: 0.8;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px32;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px24;
+    right: auto;
+    left: 0;
+    top: 0;
+    padding: $phone-px22 $phone-px6 $phone-px22 $phone-px15;
+  }
+}
+
+// Hamburger Menu Icon styling
+.menuIcon {
+  font-family: $font-WB;
+  font-size: $px30;
+  color: $pro-color-white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: $px12 $px14 $px6;
+  z-index: 1;
+  border: 0;
+  line-height: 1;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px26;
+    padding: $tablet-px15 $tablet-px14 $tablet-px9;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px19;
+    padding: $phone-px24 $phone-px14 $phone-px17;
+    color: $pro-color-gray-444;
+    background-color: transparent;
+  }
+}
+
+// User menu controll click opens a list of options
+.userNavWrap {
+  .control {
+    @include bp-phone {
+      width: 100%;
+      background-color: $pro-color-turquoise-4F;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: inline-block;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform-origin: 50% 0%;
+        top: $phone-px18;
+        border-style: solid;
+        border-width: $phone-px2 $phone-px2 0 0;
+        height: $phone-px12;
+        width: $phone-px12;
+        position: absolute;
+        right: $phone-px24;
+        z-index: 1;
+        transition: all 0.2s ease-out;
+        -webkit-transition: all 0.2s ease-out;
+        color: $pro-color-white;
+      }//before
+    }//phone
+
+    img {
+      border-radius: 50%;
+      width: $phone-px40;
+      margin-left: $phone-px20;
+      margin-top: $phone-px5;
+      float: left;
+    }
+
+    span {
+      @include bp-phone {
+        font-family: $font-WM;
+        background-color: transparent;
+        float: left;
+        font-size: $phone-px14;
+        border-bottom: none;
+        text-transform: uppercase;
+        line-height: $phone-px50;
+        color: $pro-color-white;
+        padding-left: $phone-px20;
+        padding-top: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 70%;
+      }
+    }//span
+  }//control
+
+  .actions {
+    @include bp-phone {
+      width: 100%;
+      background-color: $pro-color-turquoise-DC;
+      box-shadow: none;
+      right: initial;
+      top: initial;
+      position: relative;
+      float: left;
+      padding-top: 0;
+      z-index: 1;
+      height: 0;
+      display: none;
+
+      span {
+        background-color: $pro-color-turquoise-DC;
+      }
+
+      a {
+        line-height: $phone-px30;
+      }
+    }//phone
+
+    span {
+      @include bp-phone {
+        border-bottom: $phone-px1 solid $pro-color-white-f8;
+        display: block;
+      }
+    }//span
+
+    a {
+      display: block;
+      font-family: $font-WB;
+      letter-spacing: 0;
+      padding: $px3 $px20;
+      clear: both;
+      color: $pro-color-gray-444;
+      white-space: nowrap;
+
+      @include bp-tablet {
+        padding: $tablet-px3 $tablet-px20;
+      }
+
+      @include bp-phone {
+        font-size: $phone-px14;
+        padding: $phone-px3 $phone-px20;
+      }
+    }//a
+
+    a.signOutMenuLink {
+      color: $pro-color-turquoise-4F;
+      text-transform: uppercase;
+      font-family: $font-WM;
+    }
+  }//actions
+
+  @include bp-phone {
+    input[type=checkbox] {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      width: 100%;
+      height: $phone-px50;
+    }
+
+    input[type=checkbox]:checked ~ .actions {
+      transform: none;
+      height: auto;
+      display: block;
+    }
+
+    input[type=checkbox]:checked ~ .control::before {
+      transform: rotate(135deg);
+      top: $phone-px22;
+    }
+  }
+}
+
+// Mobile logo wrapperstyling
+.mobMenuLogo {
+  @include bp-phone {
+    min-height: $phone-px60;
+
+    img {
+      width: $phone-px170;
+      margin-left: $phone-px50;
+      margin-top: $phone-px18;
+    }
+
+    .marcom_logo {
+      height: $phone-px32;
+      width: auto;
+    }
+  }
+}
+
+// Mobile menu white bg items
+.alternativeNav.alternativeNav {
+  @include bp-phone {
+    padding-right: 0;
+    width: 100%;
+    float: none;
+    font-family: $font-PTSemiBold;
+
+    li {
+      background-color: $pro-color-white;
+      border-bottom: $phone-px1 solid $pro-color-white-f2;
+      padding-top: $phone-px3;
+
+      a {
+        padding: 0 $phone-px20;
+        display: block;
+        color: $pro-color-gray-444;
+      }//a
+    }//li
+  }
+}//alternativeNav
+
+//user signin signout wrapper mobile styling
+.sidebarNavLink {
+  @include bp-phone {
+    width: 100%;
+    background-color: $pro-color-turquoise-4F;
+    position: relative;
+    padding: $phone-px2;
+    border-bottom: $phone-px1 solid $pro-color-white-transp05;
+
+    > a {
+      font-family: $font-WM;
+      font-size: $phone-px14;
+      line-height: 1.2;
+      color: $pro-color-white;
+      padding: $phone-px8 $phone-px20;
+      text-transform: uppercase;
+      display: block;
+    }
+  }//phone
+  &.marcomSidebarNavLink {
+    @include bp-phone {
+      background-color: $pro-color-blue-25;
+    }
+  }
+}

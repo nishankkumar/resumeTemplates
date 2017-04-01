@@ -1,0 +1,26 @@
+@import 'base/components_base';
+
+.btnWrapper {
+  text-align: center;
+  padding: $px20 0;
+
+  button {
+    cursor: pointer;
+  }
+
+  @include bp-tablet {
+    padding: $tablet-px20 0;
+  }
+
+  @include bp-phone {
+    padding: $phone-px20 0;
+  }
+}
+
+.btnStyle {
+  background-color: $pro-color-white;
+
+  &:focus {
+    outline: -webkit-focus-ring-color auto 1px;
+  }
+}

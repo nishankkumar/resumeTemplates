@@ -1,0 +1,126 @@
+@import 'base/components_base';
+
+.userDropdown {
+  color: $stratfor-color-gray-97;
+  min-width: $px147;
+  text-align: left;
+  position: relative;
+  padding: $px10 $px5 $px5 $px20;
+  float: left;
+  font-family: $font-WB;
+  font-size: $px16;
+  z-index: 1;
+
+  &:hover {
+    background-color: rgba($stratfor-color-black, 0.8);
+    color: $stratfor-color-white;
+
+    > .userDropdownMenu {
+      display: block;
+    }
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px16;
+    min-width: $tablet-px147;
+    padding: $tablet-px8 $tablet-px5 $tablet-px7 $tablet-px20;
+  }
+}
+
+.userDropdownMenu {
+  z-index: 1;
+  min-width: $px165;
+  padding: $px5 0;
+  top: $px50;
+  position: absolute;
+  left: 0;
+  color: $stratfor-color-white;
+  background-color: rgba($stratfor-color-black, 0.8);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-family: $font-WB;
+  display: none;
+
+  li {
+    font-size: $px16;
+    line-height: 1.42857;
+
+    @include bp-tablet {
+      font-size: $tablet-px14;
+    }
+
+    &:last-child {
+      border-top: $px1 solid $stratfor-color-gray-666;
+      padding-top: $px5;
+      padding-bottom: $px5;
+
+      @include bp-tablet {
+        border-top-width: $tablet-px1;
+        padding-top: $tablet-px5;
+        padding-bottom: $tablet-px5;
+      }
+    }
+
+    &:last-child:hover {
+      background-color: rgba($stratfor-color-black, 0.8);
+    }
+
+    &:hover a {
+      color: $stratfor-color-white;
+      text-decoration: none;
+    }
+
+    a {
+      display: block;
+      padding: $px3 $px20;
+      clear: both;
+      color: $stratfor-color-gray-999;
+      white-space: nowrap;
+      font-family: $font-WB;
+      letter-spacing: 0;
+
+      @include bp-tablet {
+        padding: $tablet-px3 $tablet-px20;
+      }
+
+      @include bp-phone {
+        font-size: $phone-px16;
+        padding: $phone-px3 $phone-px20;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    a.signOutMenuLink {
+      color: $stratfor-color-turquoise-4F;
+      text-transform: uppercase;
+    }
+  }
+
+  @include bp-tablet {
+    min-width: $tablet-px160;
+    padding: $tablet-px5 0;
+    top: $tablet-px50;
+  }
+}
+
+.userDropdownWrap {
+  float: left;
+
+  > button {
+    float: left;
+    margin-top: $px12;
+    padding: 0 $px10;
+
+    @include bp-tablet {
+      margin-top: $tablet-px12;
+      padding: 0 $tablet-px10;
+    }
+
+    @include bp-phone {
+      display: none;
+    }
+  }
+}

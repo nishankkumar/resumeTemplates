@@ -1,0 +1,29 @@
+@import 'base/components_base';
+
+.forumButton {
+  border: none;
+  background: none;
+  font-family: 'Whitney-Book';
+  font-size: $px16;
+  color: $stratfor-color-gray-444;
+  letter-spacing: $px1;
+  padding: 0;
+  margin: 0;
+
+  @include bp-tablet {
+    font-size: $tablet-px16;
+    letter-spacing: $tablet-px1;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px14;
+    letter-spacing: $phone-px1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $stratfor-color-gray-444;
+    text-decoration: none;
+  }
+}

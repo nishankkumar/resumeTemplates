@@ -1,0 +1,112 @@
+.userText {
+  float: left;
+  line-height: 2.2;
+  max-width: $px150;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include bp-tablet {
+    line-height: 2.2;
+  }
+}
+
+.profileImage {
+  height: $px30;
+  width: $px30;
+  float: right;
+  margin-left: $px10;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include bp-tablet {
+    height: $tablet-px30;
+    width: $tablet-px30;
+    margin-left: $tablet-px10;
+  }
+}
+
+.userHederWrap {
+  float: right;
+  position: relative;
+  z-index: 1;
+}
+
+.headLinkBtn {
+  display: inline-block;
+  vertical-align: middle;
+  min-width: $px100;
+  border: $px1 solid $pro-color-turquoise-4F;
+  border-radius: $px3;
+  text-align: center;
+  font-family: $font-WSB;
+  font-size: $px13;
+  color: $pro-color-white;
+  line-height: 2;
+  padding: 0;
+  margin-left: $px5;
+  margin-right: $px5;
+  transition: all 0.15s ease-out;
+  background: transparent;
+
+  @include bp-tablet {
+    border: $tablet-px2 solid $pro-color-turquoise-4F;
+    border-radius: $tablet-px3;
+    min-width: $tablet-px100;
+    font-size: $tablet-px12;
+    margin: $tablet-px12 $tablet-px5 0;
+  }
+
+  @include bp-phone {
+    border: $phone-px1 solid $pro-color-turquoise-4F;
+    border-radius: $phone-px3;
+  }
+
+  &:hover,
+  &.active {
+    background-color: $pro-color-turquoise-4F;
+    color: $pro-color-white;
+    text-decoration: none;
+  }
+}
+
+.searchWrap {
+  float: left;
+  margin-right: $px40;
+
+  > a {
+    color: $pro-color-white;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: $px18;
+
+    @include bp-tablet {
+      font-size: $tablet-px20;
+    }
+
+    &:first-child {
+      border-right: $px3 solid $pro-color-gray-666;
+      line-height: 2.8;
+      float: left;
+      padding-right: $px28;
+
+      @include bp-tablet {
+        line-height: 2.6;
+      }
+    }
+  }
+}
+
+.headLinkWrap {
+  float: left;
+}
+
+.mobileOnly {
+  display: none;
+
+  @include bp-phone {
+    display: block;
+  }
+}

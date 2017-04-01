@@ -1,0 +1,434 @@
+@import 'base/components_base';
+
+:global {
+  .rc-select {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    color: $pro-color-gray-666;
+    border: $px1 solid rgba($pro-color-black, 0.08);
+
+    .rc-select-selection {
+      outline: none;
+      font-family: $font-WB;
+      font-size: $px16;
+      color: $pro-color-gray-444;
+      width: $px290;
+      padding-left: $px50;
+      min-height: $px40;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: relative;
+
+      @include bp-tablet {
+        width: $tablet-px290;
+        min-height: $tablet-px40;
+        padding-left: $tablet-px50;
+        font-size: $tablet-px16;
+
+        @include bp-phone {
+          width: $phone-px290;
+          min-height: $phone-px40;
+          padding-left: $phone-px50;
+          font-size: $phone-px16;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &.rc-select-selection--multiple {
+        padding-left: $px45;
+
+        .rc-select-selection__rendered {
+          padding: $px12 $px26 $px10 $px13;
+
+          @include bp-tablet {
+            padding: $tablet-px10 $tablet-px26 $tablet-px10 $tablet-px13;
+
+            @include bp-phone {
+              padding: $phone-px10 $phone-px26 $phone-px10 $phone-px13;
+            }
+          }
+
+          ul {
+            .rc-select-search--inline {
+              width: 100%;
+
+              .rc-select-search__field {
+                border: none;
+                font-size: 100%;
+                background: transparent;
+                outline: 0;
+                width: 100%;
+
+                &::-ms-clear {
+                  display: none;
+                }
+              } // end select-search__field
+            } // end select-searhc--inline
+
+            .rc-select-selection__choice {
+              background-color: $pro-color-gray-f3;
+              float: left;
+              padding: $px2 $px15;
+              margin-right: $px4;
+              position: relative;
+              overflow: hidden;
+              -webkit-transition: padding 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+              transition: padding 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+              .rc-select-selection__choice__content {
+                margin-left: 0;
+                margin-right: 0;
+                -webkit-transition: margin 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: margin 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                font-size: $px14;
+
+                @include bp-tablet {
+                  font-size: $tablet-px14;
+
+                  @include bp-phone {
+                    font-size: $phone-px14;
+                  }
+                }
+              }
+
+              .rc-select-selection__choice__remove {
+                color: $pro-color-gray-999;
+                cursor: pointer;
+                font-weight: bold;
+                padding: 0 0 0 $px8;
+                position: absolute;
+                opacity: 0;
+                -webkit-transform: scale(0);
+                transform: scale(0);
+                top: 0;
+                right: $px2;
+                -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+                transition: opacity 0.3s, -webkit-transform 0.3s;
+                transition: opacity 0.3s, transform 0.3s;
+                transition: opacity 0.3s, transform 0.3s, -webkit-transform 0.3s;
+
+                &::before {
+                  content: 'x';
+                  line-height: 1;
+                  opacity: 1;
+                  font-size: $px14;
+                  color: $pro-color-gray-333;
+
+                  @include bp-tablet {
+                    font-size: $tablet-px14;
+
+                    @include bp-phone {
+                      font-size: $phone-px14;
+                    }
+                  }
+                }
+
+                @include bp-tablet {
+                  top: -#{$tablet-px5};
+                }
+              }
+
+              &:hover {
+                .rc-select-selection__choice__remove {
+                  opacity: 1;
+                  -webkit-transform: scale(1);
+                  transform: scale(1);
+                }
+
+                .rc-select-selection__choice__content {
+                  margin-left: -$px8;
+                  margin-right: $px8;
+                }
+              }
+
+              @include bp-tablet {
+                padding: $tablet-px4 $tablet-px15;
+                margin-right: $tablet-px5;
+
+                @include bp-phone {
+                  padding: $phone-px2 $phone-px15;
+                  margin-right: $phone-px5;
+                }
+              }
+            } // end selection_choice
+
+            @include bp-tablet {
+              margin-left: $tablet-px20;
+
+              @include bp-phone {
+                margin-left: $phone-px40;
+              }
+            }
+          } // ul
+          .rc-select-selection__placeholder {
+            position: absolute;
+            left: $px60;
+            font-family: $font-WB;
+            display: block;
+            font-size: $px16;
+            color: $pro-color-gray-444;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            @include bp-tablet {
+              font-size: $tablet-px16;
+              left: $tablet-px60;
+              top: $tablet-px12;
+
+              @include bp-phone {
+                font-size: $phone-px16;
+                left: $phone-px60;
+                top: $phone-px12;
+              }
+            }
+          } // end selection__placeholder
+        } // end selection_rendered in multiply select
+      } // end selection--multiple
+
+      &.rc-select-selection--single {
+        .rc-select-selection__rendered {
+          min-height: $px40;
+          padding: $px12 $px26 $px10 $px13;
+
+          @include bp-tablet {
+            padding: $tablet-px10 $tablet-px26 $tablet-px10 $tablet-px13;
+
+            @include bp-phone {
+              padding: $phone-px10 $phone-px26 $phone-px10 $phone-px13;
+            }
+          }
+
+          .rc-select-selection-selected-value {
+            position: absolute;
+            left: $px60;
+            font-family: $font-WB;
+            display: block;
+            font-size: $px16;
+            color: $pro-color-gray-444;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            @include bp-tablet {
+              font-size: $tablet-px16;
+              left: $tablet-px60;
+              top: $tablet-px12;
+
+              @include bp-phone {
+                font-size: $phone-px16;
+                left: $phone-px60;
+                top: $phone-px12;
+              }
+            }
+          } // end selection-selected-value
+        } // end selection_rendered in single select
+      } // end selection--single
+    } // end .rc-select-selection
+
+    .rc-select-allow-clear {
+      .rc-select-selection--single {
+        .rc-select-selection__rendered {
+          padding-right: $px40;
+        }
+      }
+    } // end rc-select-allow-clear
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .rc-select-arrow {
+      b {
+        border-color: $pro-color-gray-444 transparent transparent;
+        border-style: solid;
+        border-width: $px5 $px5 0;
+        display: block;
+        height: 0;
+        position: absolute;
+        right: $px16;
+        top: $px18;
+        width: 0;
+
+        @include bp-tablet {
+          border-width: $tablet-px5 $tablet-px5 0;
+          right: $tablet-px16;
+          top: $tablet-px18;
+        }
+
+        @include bp-phone {
+          border-width: $phone-px5 $phone-px5 0;
+          right: $phone-px16;
+          top: $phone-px18;
+        }
+      }
+    }
+
+    &.rc-select-open {
+      box-shadow: 0 $px2 $px4 $pro-color-black-transp02;
+
+      .rc-select-arrow {
+        b {
+          border-color: $pro-color-turquoise-1B transparent transparent;
+        }
+      }
+    }
+  } // end .rc-select
+
+  .rc-select-dropdown {
+    background-color: $pro-color-white;
+    box-shadow: 0 $px2 $px4 $pro-color-black-transp02;
+    box-sizing: border-box;
+    z-index: 200;
+    left: -9999px;
+    top: -9999px;
+    position: absolute;
+    outline: none;
+
+    div {
+      &:first-child {
+        max-height: $px300;
+
+        @include bp-tablet {
+          max-height: $tablet-px300;
+
+          @include bp-phone {
+            max-height: $tablet-px340;
+          }
+        }
+      }
+    }
+
+    &:empty,
+    &-hidden {
+      display: none;
+    }
+
+    .rc-select-dropdown-menu-item {
+      font-family: $font-WB;
+      color: $pro-color-gray-444;
+      font-size: $px14;
+      line-height: 2.85;
+      padding-left: $px17;
+      border-bottom: $px1 solid $pro-color-white-f2;
+
+      @include bp-tablet {
+        font-size: $tablet-px14;
+
+        @include bp-phone {
+          font-size: $phone-px14;
+          padding-left: $phone-px10;
+        }
+      }
+
+      &-selected {
+        font-family: $font-WM;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $pro-color-white-f2;
+      }
+
+      .icon-ok {
+        display: none;
+      }
+    }
+
+    // check the design
+
+    &.rc-select-dropdown--multiple {
+      .rc-select-dropdown-menu-item {
+        position: relative;
+
+        span {
+          opacity: 0.4;
+          font-size: $px25;
+          color: $pro-color-turquoise-1B;
+          position: absolute;
+          top: -#{$px10};
+          right: $px5;
+        }
+
+        &-selected {
+          span {
+            opacity: 1;
+          }
+        }
+
+        .icon-ok {
+          display: block;
+        }
+      }
+    } // end rc-select-dropdown--multiple
+  } // end re-select-dropdown
+
+  .formDropdownWrap {
+    .rc-select-selection {
+      width: $px200;
+      padding-left: $px10;
+
+      @include bp-tablet {
+        width: $tablet-px140;
+        padding-left: $tablet-px10;
+      }
+
+      @include bp-phone {
+        width: $phone-px110;
+        padding-left: 0;
+      }
+
+      &.rc-select-selection--single {
+        .rc-select-selection__rendered {
+          .rc-select-selection-selected-value {
+            left: $px24;
+
+            @include bp-tablet {
+              left: $tablet-px24;
+            }
+
+            @include bp-phone {
+              left: $phone-px13;
+            }
+          }
+        }
+      }
+    }
+  }
+} // end global
+
+.filterDropdown {
+  position: relative;
+  background-color: $pro-color-white;
+
+  .typeDropDown {
+    position: absolute;
+    left: $px14;
+    top: 50%;
+    margin: -$px6 auto 0;
+    color: $pro-color-gray-D6;
+    font-family: $font-WM;
+    text-transform: uppercase;
+    font-size: $px14;
+
+    @include bp-tablet {
+      font-size: $tablet-px14;
+      left: $tablet-px14;
+
+      @include bp-phone {
+        font-size: $phone-px14;
+        left: $phone-px14;
+        margin: -#{$phone-px6} auto 0;
+      }
+    }
+  } // end typeDropDown
+} // end filterDropdown

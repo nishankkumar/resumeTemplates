@@ -1,0 +1,225 @@
+// Mixins for the clearfix
+@mixin clearfix() {
+  &::before,
+  &::after {
+    content: ''; // 1
+    display: table; // 2
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+/* mixins */
+@mixin fontFace($family, $src, $style: normal, $weight: normal, $alternativeFont: '') {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.eot'); // IE9 compat
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), url('#{$src}.woff') format('woff'), url('#{$src}.ttf') format('truetype'), url('#{$src}.svg##{$family}') format('svg');
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+$tablet-width: 1023px;
+
+@mixin bp-tablet {
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+$phone-width: 767px;
+
+@mixin bp-phone {
+  @media screen and (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+/* Print Css media query */
+@mixin print-css {
+  @media print {
+    @content;
+  }
+}
+
+//.....Common Mixins will goes here
+@mixin formButton($display: $display, $width: $width, $bgColor: $bgColor, $color: #ffffff, $border-radius: $px4) {
+  display: $display;
+  width: $width;
+  background-color: $bgColor;
+  color: $color;
+  border-radius: $border-radius;
+}
+
+// extend for cards on a forecast page
+.forecast_cards {
+  margin: 0 $px40 $px40 0;
+
+  @include bp-tablet {
+    margin: 0 $tablet-px40 $tablet-px40 0;
+
+    @include bp-phone {
+      margin: 0 auto $phone-px40;
+    }
+  }
+}
+
+// Transform mixins
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+// Transform mixins
+@mixin transition($transitions) {
+  -webkit-transition: $transitions;
+  -moz-transition: $transitions;
+  -ms-transition: $transitions;
+  transition: $transitions;
+}
+
+// line under images
+.image_underline {
+  &::after {
+    content: '';
+    display: block;
+    width: $px710;
+    height: $px4;
+    background-color: $pro-color-gray-ccc;
+    clear: both;
+    margin: 0 auto;
+
+    @include bp-tablet {
+      width: $tablet-px610;
+      margin: 0 auto;
+
+      @include bp-phone {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// style variations for images and video
+
+.inline_style {
+  width: 100%;
+
+  @extend .image_underline;
+}
+
+.left_style {
+  width: $px490 !important;
+  float: left;
+  margin: $px5 $px36 $px5 -#{$px55};
+
+  @include bp-tablet {
+    width: 100% !important;
+    float: none;
+    margin: $tablet-px5 auto;
+
+    @include bp-phone {
+      width: 100%;
+      float: none;
+      margin: $phone-px5 auto;
+    }
+  }
+}
+
+.right_style {
+  width: $px490 !important;
+  float: right;
+  margin: $px5 -#{$px55} $px5 $px36;
+
+  @include bp-tablet {
+    width: 100% !important;
+    float: none;
+    margin: $tablet-px5 auto;
+
+    @include bp-phone {
+      width: 100%;
+      float: none;
+      margin: $phone-px5 auto;
+    }
+  }
+}
+
+.full_style {
+  margin-left: -26vw;
+  width: 100vw !important;
+  overflow-x: hidden;
+
+  @include bp-tablet {
+    width: 100% !important;
+    margin: $tablet-px5 auto;
+
+    @include bp-phone {
+      width: 100%;
+      margin: $phone-px5 auto;
+    }
+  }
+
+  @extend .image_underline;
+}
+
+.wide_style {
+  width: $px1020 !important;
+  margin: $px5 -#{$px155};
+
+  @include bp-tablet {
+    width: 100% !important;
+    margin: $tablet-px5 auto;
+
+    @include bp-phone {
+      width: 100%;
+      margin: $phone-px5 auto;
+    }
+  }
+
+  @extend .image_underline;
+}
+
+// divider in marcom
+.divider {
+  content: '';
+  display: block;
+  width: $px75;
+  height: $px6;
+  margin: $px25 0 $px36;
+
+  @include bp-phone {
+    width: $phone-px75;
+    height: $phone-px6;
+  }
+}

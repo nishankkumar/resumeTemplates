@@ -1,0 +1,65 @@
+@import 'base/components_base';
+
+.loginWrap {
+  width: $px600;
+  margin: $px30 auto;
+
+  @include bp-tablet {
+    width: $tablet-px600;
+    margin: $tablet-px30 auto;
+  }
+
+  @include bp-phone {
+    width: $phone-px290;
+    margin: $phone-px30 auto;
+  }
+
+  .loginPageHeader {
+    font-size: $px28;
+    line-height: 1.21;
+    font-family: $font-PHBold;
+    background-color: $pro-color-gray-31;
+    color: $pro-color-white;
+    text-align: center;
+    margin: 0;
+    padding: $px28;
+
+    @include bp-tablet {
+      padding: $tablet-px28;
+      font-size: $tablet-px28;
+    }
+
+    @include bp-phone {
+      padding: $phone-px24 $phone-px15;
+      font-size: $phone-px24;
+    }
+
+    span {
+      font-family: $font-PHBoldItalic;
+    }
+  }
+
+  .formWrapper {
+    padding: $px40 $px40 $px10;
+
+    @include bp-tablet {
+      padding: $tablet-px40 $tablet-px40 $tablet-px10;
+    }
+
+    @include bp-phone {
+      padding: $phone-px20 $phone-px20 $phone-px10;
+    }
+  }
+
+  .loginFooterText {
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

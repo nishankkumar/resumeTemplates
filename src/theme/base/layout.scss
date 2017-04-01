@@ -1,0 +1,178 @@
+.contentWrap {
+  padding-top: $px140;
+  padding-bottom: $px20;
+  overflow-x: hidden;
+
+  @include bp-tablet {
+    padding-top: $tablet-px140;
+    padding-bottom: $tablet-px20;
+  }
+
+  @include bp-phone {
+    padding-top: $phone-px60;
+    padding-bottom: $phone-px20;
+  }
+}
+
+.container {
+  padding: 0 $px100;
+  position: relative;
+
+  @include bp-tablet {
+    padding: 0 $tablet-px37;
+  }
+
+  @include bp-phone {
+    padding: 0 $phone-px15;
+  }
+}
+
+.innerContainer {
+  width: 47.297297297vw;
+  margin: 0 auto;
+}
+
+.block {
+  float: left;
+  width: 100%;
+}
+
+// Adding below styling for the Column functionlaity similar to bootstrap
+.customCol_12 {
+  float: left;
+  min-height: $px1;
+  width: 100%;
+}
+
+.customCol_11 {
+  float: left;
+  min-height: $px1;
+  width: calc(11 * 100% / 12);
+}
+
+.customCol_10 {
+  float: left;
+  min-height: $px1;
+  width: calc(10 * 100% / 12);
+}
+
+.customCol_9 {
+  float: left;
+  min-height: $px1;
+  width: calc(9 * 100% / 12);
+}
+
+.customCol_8 {
+  float: left;
+  min-height: $px1;
+  width: calc(8 * 100% / 12);
+}
+
+.customCol_7 {
+  float: left;
+  min-height: $px1;
+  width: calc(7 * 100% / 12);
+}
+
+.customCol_6 {
+  float: left;
+  min-height: $px1;
+  width: 50%;
+}
+
+.customCol_5 {
+  float: left;
+  min-height: $px1;
+  width: calc(5 * 100% / 12);
+}
+
+.customCol_4 {
+  float: left;
+  min-height: $px1;
+  width: calc(4 * 100% / 12);
+}
+
+.customCol_3 {
+  float: left;
+  min-height: $px1;
+  width: 25%;
+}
+
+.customCol_2 {
+  float: left;
+  min-height: $px1;
+  width: calc(2 * 100% / 12);
+}
+
+.customCol_1 {
+  float: left;
+  min-height: $px1;
+  width: calc(100% / 12);
+}
+
+[class^=customCol_] {
+  @include bp-phone {
+    width: 100%;
+
+    &.phone_hidden {
+      display: none;
+    }
+  }
+}
+
+.connectedContentContainer {
+  position: relative;
+}
+
+.filterBtnWrap {
+  margin: 0 $px20;
+  display: inline-block;
+
+  @include bp-tablet {
+    width: $tablet-px290;
+    margin: 0 $tablet-px20;
+  }
+
+  @include bp-phone {
+    width: $phone-px290;
+    margin: $phone-px10 auto;
+  }
+}
+
+.filterBarWrap {
+  padding: $px40;
+  text-align: center;
+
+  @include bp-tablet {
+    padding: $tablet-px40;
+  }
+
+  @include bp-phone {
+    padding: $phone-px20 0;
+  }
+}
+
+.highlightText {
+  background: $pro-color-turquoise-4F-trans05;
+  padding: $px3 $px2;
+
+  @include bp-tablet {
+    padding: $tablet-px3 $tablet-px2;
+  }
+
+  @include bp-phone {
+    padding: $phone-px2 $phone-px1;
+  }
+}
+
+.padding-for-float {
+  margin: $px20;
+
+  @include bp-tablet {
+    margin: $tablet-px20;
+  }
+
+  @include bp-phone {
+    margin: $phone-px20;
+  }
+}

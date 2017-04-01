@@ -1,0 +1,14 @@
+// @import 'bootstrap/glyphicons';
+
+@include fontFace('PublicoText-Bold','/fonts/PublicoText-Bold', bold, normal);
+@include fontFace('PublicoText-Roman','/fonts/PublicoText-Roman', normal, normal);
+@include fontFace('PublicoText-Italic','/fonts/PublicoText-Italic', normal, normal);
+@include fontFace('PublicoHeadline-Bold','/fonts/PublicoHeadline-Bold', bold, normal);
+@include fontFace('PublicoHeadline-BoldItalic','/fonts/PublicoHeadline-BoldItalic', bold, italic);
+@include fontFace('PublicoHeadline-Medium','/fonts/PublicoHeadline-Medium', normal, normal);
+@include fontFace('Whitney-Semibold','/fonts/Whitney-Semibold');
+@include fontFace('Whitney-Medium','/fonts/Whitney-Medium');
+@include fontFace('Whitney-Book','/fonts/Whitney-Book');
+@include fontFace('Whitney-BookItalic','/fonts/Whitney-BookItalic');
+@include fontFace('Whitney-MediumItalic','/fonts/Whitney-MediumItalic');
+@include fontFace('Whitney-Bold','/fonts/Whitney-Bold');

@@ -1,0 +1,75 @@
+// Button styling used globally, also includes disable state
+.btnStyle {
+  display: inline-block;
+  margin: $px10 $px20;
+  font-size: $px18;
+  line-height: 1.4;
+  padding: $px8 $px13;
+  border: $px1 solid $pro-color-turquoise-1B;
+  border-radius: $px3;
+  min-width: $px220;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90%;
+  color: $pro-color-turquoise-1B;
+  background: transparent;
+
+  &.active,
+  &:hover,
+  &.tealDefault,
+  &.transpDefault:hover {
+    background-color: $pro-color-turquoise-1B;
+    color: $pro-color-white;
+    text-decoration: none;
+  }
+
+  &.transpDefault,
+  &.tealDefault:hover {
+    background-color: transparent;
+    color: $pro-color-turquoise-1B;
+  }
+
+  &.disable {
+    pointer-events: none;
+    cursor: auto;
+    background-color: transparent;
+    color: $pro-color-gray-ccc;
+    border-color: $pro-color-gray-ccc;
+    text-decoration: none;
+  }
+
+  &.active:hover {
+    background-color: darken($pro-color-turquoise-1B, 5%);
+  }
+
+  &.whiteDefault {
+    color: $pro-color-white;
+    border: $px1 solid $pro-color-white;
+
+    &:hover,
+    &:active {
+      background-color: $pro-color-white;
+      color: $pro-color-turquoise-1B;
+    }
+  }
+
+  @include bp-tablet {
+    font-size: $tablet-px18;
+    margin: $tablet-px10 $tablet-px20;
+    padding: $tablet-px8 $tablet-px13;
+    border-radius: $tablet-px3;
+    border-width: $tablet-px2;
+    min-width: $tablet-px220;
+  }
+
+  @include bp-phone {
+    font-size: $phone-px18;
+    margin: $phone-px10;
+    padding: $phone-px8 $phone-px13;
+    border-radius: $phone-px3;
+    border-width: $phone-px2;
+    min-width: $phone-px250;
+  }
+}

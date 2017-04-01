@@ -1,0 +1,19 @@
+#main {
+  padding: 0;
+}
+
+.bodyCenterBlock {
+  width: $px710;
+  max-width: $px710;
+  margin: 0 auto;
+
+  @include bp-tablet {
+    width: $tablet-px610;
+    max-width: $tablet-px610;
+
+    @include bp-phone {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}
