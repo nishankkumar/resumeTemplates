@@ -1,0 +1,115 @@
+@import 'base/components_base';
+@import 'base/form_variables';
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.formGroup {
+  margin-bottom: $px30;
+
+  @include bp-tablet {
+    margin-bottom: $tablet-px35;
+  }
+
+  @include bp-phone {
+    margin-bottom: $phone-px35;
+  }
+}
+
+form {
+  .inputTextDefault {
+    @extend %input-text-default;
+
+    background-color: $pro-color-white;
+    font-family: $font-WB;
+    font-size: $px16;
+
+    &:focus {
+      @extend %input-text-focus;
+
+      background-color: $pro-color-white;
+    }
+
+    @include bp-tablet {
+      font-size: $tablet-px16;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px16;
+    }
+  }
+
+  .label {
+    @extend %label;
+
+    @include bp-tablet {
+      font-size: $tablet-px16;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px16;
+    }
+  }
+
+  .buttonLogin {
+    @include formButton(block, $px290, $pro-color-turquoise-1B, $pro-color-white, 4px);
+
+    margin: 0 auto;
+    padding: $px10 0;
+    outline: 0;
+    border: none;
+    text-align: center;
+    font-size: $px18;
+    line-height: 1.3;
+    font-family: $btn-form;
+
+    @include bp-phone {
+      font-size: $tablet-px18;
+      padding: $tablet-px10 0;
+    }
+
+    @include bp-phone {
+      font-size: $phone-px18;
+      padding: $phone-px10 0;
+    }
+  }
+
+  .wrapFormLinkSmall {
+    text-align: center;
+
+    .smallText {
+      @extend %small-text-form;
+
+      cursor: pointer;
+
+      @include bp-tablet {
+        font-size: $tablet-px16;
+      }
+
+      @include bp-phone {
+        font-size: $phone-px16;
+      }
+    }
+  }
+
+  .bottomButtonWrapper {
+    margin-bottom: $px25;
+    text-align: center;
+
+    @include bp-tablet {
+      margin-bottom: $tablet-px25;
+    }
+
+    @include bp-phone {
+      margin-bottom: $phone-px25;
+
+      button {
+        min-width: $phone-px140;
+      }
+    }
+  }
+}

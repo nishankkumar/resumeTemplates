@@ -4,8 +4,6 @@
 
 import React, { PropTypes } from 'react';
 import serialize from 'serialize-javascript';
-import { GOOGLE_TAG_MANAGER_ID } from '../config';
-import GoogleTagManager from './GoogleTagManager/';
 
 function Html({ title, description, style, css, script, state, children, meta }) {
   const metaTags = meta ? Object.keys(meta) : '';
@@ -49,7 +47,6 @@ function Html({ title, description, style, css, script, state, children, meta })
           }}
         />}
         {script && <script src={script} />}
-        <GoogleTagManager id={GOOGLE_TAG_MANAGER_ID} />
       </body>
     </html>
   );

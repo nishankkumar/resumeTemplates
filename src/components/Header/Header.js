@@ -1,5 +1,4 @@
-import React, { Component, PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
 import cx from 'classnames';
 import _ from 'lodash';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
@@ -99,22 +98,10 @@ class Header extends Component {
             <div className={s.menuItems}>
               <div className="mobileOnly">
                 <div className="mobMenuLogo clearfix">
-                  {isMarcom
-                    ?
-                      <Link className="lockup" to="/">
-                        <img
-                          className="marcom_logo"
-                          src={'https://cdn2.hubspot.net/hubfs/515194/WVLogos/logo_tagline.png'}
-                          alt="Stratfor - Your world in context"
-                        />
-                      </Link>
-                    :
-                      <Link className="lockup" to="/">
-                        <img src={'https://cdn2.hubspot.net/hubfs/515194/WVLogos/lockup.white.png'} alt="Stratfor Worldview" />
-                      </Link>
-                  }
+                  <Link className="lockup" to="/">
+                    <img src={'https://cdn2.hubspot.net/hubfs/515194/WVLogos/lockup.white.png'} alt="Stratfor Worldview" />
+                  </Link>
                 </div>
-                <UserMenu display={sessionInit} isMobile />
               </div>
               <div>
                 <button
@@ -163,14 +150,6 @@ class Header extends Component {
                   <li><Link to="/topic">Topics</Link></li>
                   <li><Link to="/series">Series</Link></li>
                   <li><Link to="/region">Regions</Link></li>
-                </ul>
-                <ul className={cx(s.navMenuWorldview, s.mobileOnly)}>
-                  <span className="highlight">
-                    <button
-                      className={cx('btnLinkStyle', s.forumButton)}
-                      onClick={() => this.props.showM(FORUM_MODAL)}
-                    >Forums</button>
-                  </span>
                 </ul>
               </div>
               <ul>
@@ -246,7 +225,7 @@ class Header extends Component {
           <nav className="superGlobalNav container">
             <div className="userHederWrap">
               {/* Begin UserMenu */}
-              {<UserMenu display={sessionInit} />}
+              {<UserMenu />}
               {/* End UserMenu */}
             </div>
           </nav>

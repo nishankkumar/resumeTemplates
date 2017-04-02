@@ -9,7 +9,7 @@ export default {
 
   path: '/',
 
-  async action({ store }) {
+  async action() {
     return {
       title: 'Latest',
       component: <Latest />,

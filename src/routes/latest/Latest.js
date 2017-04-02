@@ -1,8 +1,6 @@
-import React, { PropTypes, Component } from 'react';
-import cx from 'classnames';
-import qs from 'qs';
+import React from 'react';
+// import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import { connect } from 'react-redux';
 import s from './Latest.scss';
 import Layout from '../../components/Layout';
 

@@ -17,3 +17,4 @@ export const SESS_USER_EMAIL_SETTINGS = 'SESS_USER_EMAIL_SETTINGS';
  * Error types.
  */
 export const SET_ERROR = 'ERROR';
+export const SET_FILTER = 'FILTER';

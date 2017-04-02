@@ -1,7 +1,7 @@
 @import 'base/components_base';
 
 .userDropdown {
-  color: $stratfor-color-gray-97;
+  color: $pro-color-gray-97;
   min-width: $px147;
   text-align: left;
   position: relative;
@@ -12,8 +12,8 @@
   z-index: 1;
 
   &:hover {
-    background-color: rgba($stratfor-color-black, 0.8);
-    color: $stratfor-color-white;
+    background-color: rgba($pro-color-black, 0.8);
+    color: $pro-color-white;
 
     > .userDropdownMenu {
       display: block;
@@ -34,8 +34,8 @@
   top: $px50;
   position: absolute;
   left: 0;
-  color: $stratfor-color-white;
-  background-color: rgba($stratfor-color-black, 0.8);
+  color: $pro-color-white;
+  background-color: rgba($pro-color-black, 0.8);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   font-family: $font-WB;
@@ -50,7 +50,7 @@
     }
 
     &:last-child {
-      border-top: $px1 solid $stratfor-color-gray-666;
+      border-top: $px1 solid $pro-color-gray-666;
       padding-top: $px5;
       padding-bottom: $px5;
 
@@ -62,11 +62,11 @@
     }
 
     &:last-child:hover {
-      background-color: rgba($stratfor-color-black, 0.8);
+      background-color: rgba($pro-color-black, 0.8);
     }
 
     &:hover a {
-      color: $stratfor-color-white;
+      color: $pro-color-white;
       text-decoration: none;
     }
 
@@ -74,7 +74,7 @@
       display: block;
       padding: $px3 $px20;
       clear: both;
-      color: $stratfor-color-gray-999;
+      color: $pro-color-gray-999;
       white-space: nowrap;
       font-family: $font-WB;
       letter-spacing: 0;
@@ -94,7 +94,7 @@
     }
 
     a.signOutMenuLink {
-      color: $stratfor-color-turquoise-4F;
+      color: $pro-color-turquoise-4F;
       text-transform: uppercase;
     }
   }

@@ -12,34 +12,11 @@ export default {
   // Keep in mind, routes are evaluated in order
   children: [
     require('./latest').default,
-    require('./search').default,
-    require('./forecasts').default,
-    require('./assessments').default,
-    require('./snapshot').default,
-    require('./columns').default,
-    require('./media').default,
-    require('./situation-reports').default,
-    require('./global-perspectives').default,
-    require('./people').default,
-    require('./partners').default,
-    require('./themes').default,
-    require('./topics').default,
-    require('./series').default,
-    require('./regions').default,
-    require('./resetPassword').default,
-    require('./account').default,
-    require('./subscribe').default,
-    require('./account/myreports').default,
-    require('./privacy-policy').default,
     require('./login').default,
-    require('./terms-of-use').default,
-    require('../routes-marcom/contact-us').default,
-    require('./profile').default,
 
     // WWW Marcom routes moved to another folder. @see routes-marcom folder.
 
     // place new routes before...
-    require('./article').default,
     require('./notFound').default,
   ],
 

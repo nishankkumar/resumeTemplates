@@ -1,14 +1,8 @@
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
-import cx from 'classnames';
+import React from 'react';
+// import cx from 'classnames';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link';
 import s from './UserMenu.scss';
-
-function renderUserImg(userPicture) {
-  return <img src={userPicture || '/images/user_default_img.jpg'} alt="" />;
-}
-
 
 /**
  * Component function.

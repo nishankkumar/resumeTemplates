@@ -265,7 +265,7 @@ const clientConfig = extend(true, {}, config, {
 const serverConfig = extend(true, {}, config, {
   entry: {
     worldview: './wv_server.js',
-    marcom: './ma_server.js',
+    // marcom: './ma_server.js',
   },
 
   output: {

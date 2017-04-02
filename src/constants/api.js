@@ -3,7 +3,7 @@
  * @File Contain API constants.
  */
 import { API_ENDPOINT_URL, API_URL } from '../config';
-import { CONTENT_TYPE_MAP } from '../constants';
+// import { CONTENT_TYPE_MAP } from '../constants';
 
 export const API_URL_FOR = {
   // User and session endpoints.

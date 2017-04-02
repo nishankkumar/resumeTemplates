@@ -2,10 +2,9 @@
  *
  */
 
-import React, { PropTypes } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import cx from 'classnames';
+// import cx from 'classnames';
 import s from './Footer.scss';
 import Link from '../Link';
 
@@ -58,7 +57,7 @@ function Footer() {
                 </li>
                 <li className="footerNavLink">
                   <a
-                    href="#"
+                    href="/"
                     title="Stratfor Store"
                     alt="Stratfor Store"
                   >Stratfor Store</a>
@@ -126,13 +125,13 @@ function Footer() {
             </ul>
             <div className="appLinkWrap">
               <a
-                href="#"
+                href="/"
                 className="icnAppleStoreBadge"
                 target="_blank"
                 rel="noopener noreferrer"
               >&nbsp;</a>
               <a
-                href="#"
+                href="/"
                 className="icnGooglePlayBadge"
                 target="_blank"
                 rel="noopener noreferrer"

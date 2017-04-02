@@ -27,7 +27,7 @@ async function start() {
     webpackConfig.filter(x => x.target !== 'node').forEach(config => {
       /* eslint-disable no-param-reassign */
       config.entry = {
-        marcom: ['webpack-hot-middleware/client?name=marcom'].concat(config.entry.marcom),
+        // marcom: ['webpack-hot-middleware/client?name=marcom'].concat(config.entry.marcom),
         worldview: ['webpack-hot-middleware/client?name=worldview'].concat(config.entry.worldview),
       };
       config.output.filename = config.output.filename.replace('[chunkhash]', '[hash]');
